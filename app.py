@@ -89,5 +89,6 @@ if st.button('Predict Score..'):
          'last_five':[last_five]}
     )
     st.table(input_df)
-    result = pipe.predict(input_df)
-    st.header("Predicted Score: " + str(int(result[0])))
+    result = pipe.predict(input_df)[0]
+    print(result)
+    st.header("Predicted Score: " + str(int(result)))
